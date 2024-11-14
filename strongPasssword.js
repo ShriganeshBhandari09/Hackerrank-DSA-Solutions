@@ -32,15 +32,11 @@ function strongPassword(n, password) {
     count++;
     console.log("Password should include special characters", count);
   }
-  if (password.length < 5) {
-    count++
-    console.log("Password length should be 6", count);
-    return 6 - password.length;
-  }else{
-    return count;
+  diffLength = 6 - password.length;
+  if(diffLength>0 && diffLength>=count){
+    return diffLength
   }
+  return count
 }
 
-console.log(strongPassword(4, "4700"));
-
-//TODO: Not Passed All test cases, i need to modify code
+console.log(strongPassword(3, "Ab1"));

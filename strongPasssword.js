@@ -18,27 +18,29 @@ function strongPassword(n, password) {
   let count = 0;
   if (!password.match(/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/)) {
     count++;
-    console.log("Password should includes capital letters");
+    console.log("Password should includes capital letters", count);
   }
   if (!password.match(/[0123456789]/)) {
     count++;
-    console.log("Password should includes numbers");
+    console.log("Password should includes numbers", count);
   }
   if (!password.match(/[abcdefghijklmnopqrstuvwxyz]/)) {
     count++;
-    console.log("Password length should includes small letters");
+    console.log("Password length should includes small letters", count);
   }
-  if (!password.match(/[!@#$%^&*()-+]/)) {
+  if (!password.match(/[!@#$%^&*()--+]/)) {
     count++;
-    console.log("Password should include special characters");
+    console.log("Password should include special characters", count);
   }
-  if (n <= 6) {
-    count++;
-    console.log("Password length should be 6");
+  if (password.length < 5) {
+    count++
+    console.log("Password length should be 6", count);
+    return 6 - password.length;
+  }else{
+    return count;
   }
-  return count
 }
 
-console.log(strongPassword(11, "#HackerRank"));
+console.log(strongPassword(4, "4700"));
 
-//TODO: Not full Solution , I need to change some code
+//TODO: Not Passed All test cases, i need to modify code

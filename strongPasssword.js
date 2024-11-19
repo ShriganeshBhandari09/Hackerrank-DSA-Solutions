@@ -33,10 +33,10 @@ function strongPassword(n, password) {
     console.log("Password should include special characters", count);
   }
   diffLength = 6 - password.length;
-  if(diffLength>0 && diffLength>=count){
-    return diffLength
+  if (diffLength > 0 && diffLength >= count) {
+    return diffLength;
   }
-  return count
+  return count;
 }
 
 console.log(strongPassword(3, "Ab1"));
